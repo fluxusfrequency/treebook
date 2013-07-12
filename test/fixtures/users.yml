@@ -3,3 +3,9 @@ ben:
   last_name: "Lewis"
   email: "bennlewis@gmail.com"
   profile_name: "benlewis"
+
+john:
+  first_name: "John"
+  last_name: "Doe"
+  email: "johndoe@google.com"
+  profile_name: "johndoe"
