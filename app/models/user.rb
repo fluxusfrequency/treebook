@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
                               with: /^[a-zA-Z0-9_-]+$/,
                               message: 'Must be formatted correctly.'
                            }
+  has_many :activities
   has_many :albums
   has_many :pictures
   has_many :statuses
@@ -84,6 +85,13 @@ class User < ActiveRecord::Base
     blocked_friends.include?(other_user)
   end
 
+  def create_activity(item, action)
+    activity = activities.new
+    activity.targetable = item
+    activity.action = action
+    activity.save
+    activity
+  end
 
 end
 
